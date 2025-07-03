@@ -21,8 +21,8 @@ A web application that explores NASA's open APIs through an interactive card int
 
 ## Features
 
-- Interactive card interface for browsing NASA content
-- Three API exploration modes:
+- Interactive home page with card interface for browsing NASA content (hover / use dropdown menu)
+- Three API exploration filters for search your card:
   - Daily Astronomy Picture (APOD)
   - Earth imagery (EPIC)
   - NASA Image Library search
@@ -53,3 +53,11 @@ node server.js
 - Start the frontend development server (in a new terminal tab):
 npm run dev
 
+5.The problems that I didn't fix
+- Sometimes the process of loading image may fail (not very stable)
+- For the gallery page, it need several seconds to load the whole pic.
+
+6.The proposed feature
+- Make a cyber postcard with collected(favorite) card.
+- Add sound feedback to enhance accessibility.
+- Add a back button on favorite page.
