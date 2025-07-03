@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './header.css';
+import './Header.css';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
