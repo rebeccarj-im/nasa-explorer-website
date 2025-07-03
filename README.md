@@ -1,4 +1,4 @@
-# Cosmic Explorer - NASA API Card Browser
+# NASA Oracle Explorer - NASA API Card Browser
 
 A web application that explores NASA's open APIs through an interactive card interface, designed to encourage exploration of NASA's vast astronomical databases with a cosmic energy healing theme.
 
