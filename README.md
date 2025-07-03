@@ -36,7 +36,7 @@ A web application that explores NASA's open APIs through an interactive card int
 xxx
 
 2.Install dependencies for both frontend and backend
-- cd cosmic-explorer
+
 - npm install
 - cd client
 - npm install
