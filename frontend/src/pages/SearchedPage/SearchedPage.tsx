@@ -10,6 +10,7 @@ interface ImageData {
   explanation?: string;
   date?: string;
 }
+const API_BASE = import.meta.env.VITE_API_URL;
 
 const SearchedPage: React.FC = () => {
   const [results, setResults] = useState<ImageData[]>([]);
@@ -23,7 +24,11 @@ const SearchedPage: React.FC = () => {
 
   useEffect(() => {
     const fetchAll = async () => {
-      const endpoints = ['/api/card1', '/api/card2', '/api/card3'];
+      const endpoints = [
+        `${API_BASE}/api/card1`,
+        `${API_BASE}/api/card2`,
+        `${API_BASE}/api/card3`
+      ];
       const responses = await Promise.all(endpoints.map(ep => fetch(ep).then(res => res.json())));
       const all = responses.flat();
 
