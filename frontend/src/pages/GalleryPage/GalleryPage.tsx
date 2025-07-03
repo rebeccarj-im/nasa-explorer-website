@@ -10,6 +10,7 @@ interface ImageData {
   explanation?: string;
   date?: string;
 }
+const API_BASE = import.meta.env.VITE_API_URL;
 
 const GalleryPage: React.FC = () => {
   const [images, setImages] = useState<ImageData[]>([]);
@@ -33,7 +34,7 @@ const GalleryPage: React.FC = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await fetch(`/api/card${id}`);
+        const res = await fetch(`${API_BASE}/api/card${id}`);
         const data = await res.json();
         setImages(data);
       } catch (err) {
