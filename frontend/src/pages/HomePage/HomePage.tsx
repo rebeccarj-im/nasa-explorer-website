@@ -14,10 +14,11 @@ interface ImageData {
 }
 
 const apiNames = ['Image Library', 'EPIC', 'APOD'];
-const API_BASE = import.meta.env.VITE_API_URL;
+
 
 
 const HomePage: React.FC = () => {
+  const API_BASE = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
 
   const [images, setImages] = useState<ImageData[][]>([]);
