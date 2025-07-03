@@ -22,6 +22,7 @@ const Overlay: React.FC<OverlayProps> = ({
   onClose
 }) => {
   const normalizedLibrary = library?.toLowerCase();
+  const API_BASE = import.meta.env.VITE_API_URL;
   const chartRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -52,7 +53,7 @@ const Overlay: React.FC<OverlayProps> = ({
 
   useEffect(() => {
     if (normalizedLibrary === 'epic' && date && title) {
-      fetch(`/api/epic-detail?date=${encodeURIComponent(date)}&title=${encodeURIComponent(title)}`)
+      fetch(`${API_BASE}/api/epic-detail?date=${encodeURIComponent(date)}&title=${encodeURIComponent(title)}`)
         .then(res => res.json())
         .then(data => {
           if (!data.error) setEpicData(data);
@@ -91,7 +92,7 @@ const Overlay: React.FC<OverlayProps> = ({
 
   useEffect(() => {
     if (normalizedLibrary === 'apod' && date) {
-      fetch(`/api/apod-detail?date=${encodeURIComponent(date)}`)
+      fetch(`${API_BASE}/api/apod-detail?date=${encodeURIComponent(date)}`)
         .then(res => res.json())
         .then(data => {
           if (!data.error) {
@@ -109,7 +110,7 @@ const Overlay: React.FC<OverlayProps> = ({
 
   useEffect(() => {
     if (normalizedLibrary === 'image library' && nasaId) {
-      fetch(`/api/image-detail?id=${encodeURIComponent(nasaId)}`)
+      fetch(`${API_BASE}/api/image-detail?id=${encodeURIComponent(nasaId)}`)
         .then(res => res.json())
         .then(data => {
           if (data?.url) {
