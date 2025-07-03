@@ -1,0 +1,140 @@
+body, html, #root {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width:100%;
+  height:100%;
+}
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent; 
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: black;
+  color: white;
+}
+
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+
+.home-status {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.home-status.loading {
+  color: white;
+}
+
+.home-status.error {
+  color: red;
+}
+
+.home-header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background-color: transparent; 
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: transparent; 
+}
+
+.home-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: transparent; 
+  width: 100%;
+  text-align: center;
+  box-shadow: none; 
+  border: none; 
+  color: #ccc;
+}
+
+.hover-tip {
+  position: relative;       
+  top: -100px;               
+  text-align: center;
+  color: grey;
+  font-size: 1.2rem;
+  font-weight: 500;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s forwards ease-out;
+  animation-delay: 1s;  
+  font-family: 'Playfair Display', 'Georgia', serif; 
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+.search-results {
+  padding: 2rem;
+}
+
+.search-results h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.search-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.search-card {
+  width: 200px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.search-card:hover {
+  transform: scale(1.03);
+}
+
+.search-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-caption {
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+}

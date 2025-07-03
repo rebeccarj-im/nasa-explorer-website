@@ -1,0 +1,188 @@
+body, html, #root {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-page {
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  padding-top: 0;
+  margin-top: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Georgia', 'Times New Roman', serif; 
+}
+
+.back-button {
+  position: absolute;
+  top: 90px;
+  left: 1.5rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.back-button:hover {
+  color: white;
+}
+
+.ring-scene {
+  width: 100%;
+  height: 520px;
+  perspective: 1200px;
+  position: relative;
+  overflow: visible;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateY(0deg);
+  transition: transform 0.1s ease-out;
+}
+
+
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 200px;
+  margin: -100px -70px;
+  
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease, box-shadow 0.3s, border 0.3s;
+  z-index: 1;
+}
+
+.carousel-card:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.25),
+              0 0 40px 10px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 0.6rem;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.4rem;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+
+.arrow-buttons {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.arrow-buttons button {
+  all: unset;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+.arrow-buttons button:hover {
+  color: white;
+  transform: scale(1.3);
+}
+
+
+@keyframes flip720 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(720deg);
+  }
+}
+
+.carousel-card.flip-double {
+  animation: flip720 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  backface-visibility: visible;
+  transform-origin: center center;
+}
+
+.overlay-backdrop {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.overlay-backdrop.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.overlay-backdrop.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+
+@media (max-width: 900px) {
+  .carousel-card {
+    width: 110px;
+    height: 160px;
+    margin: -80px -55px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .carousel-card {
+    width: 90px;
+    height: 130px;
+    margin: -65px -45px;
+  }
+}
