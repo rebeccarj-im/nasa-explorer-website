@@ -10,9 +10,10 @@ interface ImageData {
   explanation?: string;
   date?: string;
 }
-const API_BASE = import.meta.env.VITE_API_URL;
+
 
 const GalleryPage: React.FC = () => {
+  const API_BASE = import.meta.env.VITE_API_URL;
   const [images, setImages] = useState<ImageData[]>([]);
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [error, setError] = useState<string | null>(null);
