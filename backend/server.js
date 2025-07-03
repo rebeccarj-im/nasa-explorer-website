@@ -41,7 +41,7 @@ app.get('/proxy-image', async (req, res) => {
 // NASA Image Library pic/video
 app.get('/api/card1', async (req, res) => {
   try {
-    const url = `https://images-api.nasa.gov/search?q=earth&media_type=image`;
+    const url = `https://images-api.nasa.gov/search?q=earth&media_type=image,video`;
     const response = await axios.get(url);
     const items = response.data.collection.items.slice(0, 18);
 
