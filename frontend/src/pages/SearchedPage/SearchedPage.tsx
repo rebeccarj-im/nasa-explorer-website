@@ -10,9 +10,10 @@ interface ImageData {
   explanation?: string;
   date?: string;
 }
-const API_BASE = import.meta.env.VITE_API_URL;
+
 
 const SearchedPage: React.FC = () => {
+  const API_BASE = import.meta.env.VITE_API_URL;
   const [results, setResults] = useState<ImageData[]>([]);
   const [favorites, setFavorites] = useState<ImageData[]>([]);
   const location = useLocation();
