@@ -25,7 +25,9 @@ const HomeCard3D: React.FC<HomeCard3DProps> = ({
 
   useEffect(() => {
     if (!imageUrl) return;
-    const proxyUrl = `/proxy-image?url=${encodeURIComponent(imageUrl)}`;
+    const apiBase = import.meta.env.VITE_API_URL;
+    const proxyUrl = `${apiBase}/proxy-image?url=${encodeURIComponent(imageUrl)}`;
+
     const img = new window.Image();
     img.crossOrigin = 'anonymous';
     img.onload = () => {
