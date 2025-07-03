@@ -14,6 +14,8 @@ interface ImageData {
 }
 
 const apiNames = ['Image Library', 'EPIC', 'APOD'];
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -34,7 +36,12 @@ const HomePage: React.FC = () => {
     const fetchAll = async () => {
       setLoading(true);
       try {
-        const endpoints = ['/api/card1', '/api/card2', '/api/card3'];
+        const endpoints = [
+          `${API_BASE}/api/card1`,
+          `${API_BASE}/api/card2`,
+          `${API_BASE}/api/card3`
+        ];
+
         const responses = await Promise.all(
           endpoints.map(endpoint =>
             fetch(endpoint).then(res => res.json())
